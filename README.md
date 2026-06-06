@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Cliff Kaela - Professional Portfolio Website
 
 A modern, responsive portfolio website showcasing your achievements, projects, and expertise in tech innovation and law.
@@ -274,3 +275,6 @@ For customization help or issues:
 **Website:** Your Custom Portfolio
 
 Enjoy your professional portfolio! 🚀
+=======
+# CLIFF-KAELA-PORTFOLIO-WEBSITE
+>>>>>>> target/main
