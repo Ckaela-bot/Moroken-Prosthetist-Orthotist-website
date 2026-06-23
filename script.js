@@ -36,21 +36,23 @@ if (contactForm) {
 
         // Get form values
         const formData = new FormData(this);
-        const name = this.querySelector('input[type="text"]').value;
-        const email = this.querySelector('input[type="email"]').value;
-        const subject = this.querySelectorAll('input[type="text"]')[1].value;
+        const inputs = this.querySelectorAll('input');
+        const name = inputs[0].value;
+        const email = inputs[1].value;
+        const phone = inputs[2].value;
+        const service = inputs[3].value;
         const message = this.querySelector('textarea').value;
 
         // Validate form
-        if (name && email && subject && message) {
+        if (name && email && phone && service && message) {
             // Create mailto link
-            const mailtoLink = `mailto:kaelacliff425@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+            const mailtoLink = `mailto:oratilemaroke@gmail.com?subject=Appointment Request from ${name}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nService: ${service}\n\nMessage:\n${message}`)}`;
             
             // Open email client
             window.location.href = mailtoLink;
 
             // Show success message
-            showNotification('Message sent! Opening your email client...', 'success');
+            showNotification('Appointment request sent! Opening your email client...', 'success');
 
             // Reset form
             this.reset();
@@ -69,12 +71,14 @@ function showNotification(message, type) {
         position: fixed;
         top: 80px;
         right: 20px;
-        background: ${type === 'success' ? '#00d084' : '#ff6b35'};
+        background: ${type === 'success' ? '#00a3e0' : '#e74c3c'};
         color: white;
         padding: 1rem 2rem;
         border-radius: 8px;
         z-index: 10000;
         animation: slideIn 0.3s ease;
+        font-weight: 600;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     `;
 
     document.body.appendChild(notification);

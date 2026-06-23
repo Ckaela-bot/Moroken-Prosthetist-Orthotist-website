@@ -1,45 +1,51 @@
-<<<<<<< HEAD
-# Cliff Kaela - Professional Portfolio Website
+# Moroken Prosthetist & Orthotist Website
 
-A modern, responsive portfolio website showcasing your achievements, projects, and expertise in tech innovation and law.
+A modern, responsive professional services website for Moroken Prosthetist & Orthotist, showcasing prosthetic and orthotic solutions and services in Pretoria.
+
+**GitHub Repository:** [Ckaela-bot/Moroken-Prosthetist-Orthotist-website](https://github.com/Ckaela-bot/Moroken-Prosthetist-Orthotist-website)
 
 ## Features
 
-✨ **Modern Design**
-- Sleek dark theme with tech-inspired gradients
-- Animated tech background with grid pattern
-- Smooth scrolling and transitions
+✨ **Modern Professional Design**
+- Premium light theme with blue and grey color scheme
+- Smooth scrolling and transitions with cubic-bezier animations
 - Professional gradient text effects
+- Glass-morphism effects on cards
+- Top-notch styling with premium visual hierarchy
 
-📱 **Responsive Layout**
-- Fully responsive on desktop, tablet, and mobile
+📱 **Fully Responsive Layout**
+- Desktop, tablet, and mobile optimized
 - Hamburger menu for mobile devices
-- Optimized performance across all screen sizes
+- Premium animations and transitions
+- Touch-friendly interface
+- Optimized responsive breakpoints at 768px and 480px
 
 🎯 **Key Sections**
-- Hero section with impressive statistics
-- About me with skills grid
-- Featured projects showcase
-- Achievements and recognition
-- Resume/Qualifications
-- Contact section with working form
-- Social media links
+- **Hero Section:** Impressive statistics (10+ Patients Served, 2+ Years Experience, 100% Satisfaction Rate)
+- **About Section:** Company mission, expertise badges, and professional introduction
+- **Services Section:** Prosthetics, Orthotics, Adjustments & Maintenance, Consultations
+- **Testimonials:** Client success stories with 5-star ratings
+- **Contact Section:** Appointment booking form and contact information
+- **Footer:** Company information and social links
 
-🔧 **Interactive Elements**
-- Smooth navigation with active link highlighting
-- Hover effects on all interactive elements
-- Animated counter for statistics
-- Contact form with email integration
-- Mobile-friendly hamburger menu
+🔧 **Interactive Features**
+- Premium navigation with gradient underlines and hover animations
+- Smooth contact form with validation
+- Mobile-friendly responsive design
+- Scroll animations and transitions
+- Working appointment booking system
 
 ## File Structure
 
 ```
-c:\MY Website\
-├── index.html          # Main HTML file
-├── styles.css          # Professional styling and animations
-├── script.js           # Interactive features and functionality
-└── README.md          # This file
+d:\MY Website\
+├── index.html          # Main HTML structure
+├── styles.css          # Professional styling with CSS variables
+├── script.js           # Form handling and navigation
+├── README.md          # Documentation
+├── QUICKSTART.md      # Quick start guide
+├── CUSTOMIZATION.md   # Customization guide
+└── assets/            # Images and media
 ```
 
 ## How to Use
@@ -50,54 +56,62 @@ c:\MY Website\
 
 2. **Navigate the site:**
    - Click navigation links to jump to sections
-   - Scroll to explore different parts
-   - Use the "View My Work" button to see projects
+   - Scroll to explore different sections
+   - Use mobile hamburger menu on smaller screens
 
-3. **Contact form:**
-   - Fill in the contact form and submit
-   - It will open your default email client with the message pre-filled
-   - Send directly to kaelacliff425@gmail.com
+3. **Contact/Appointment Form:**
+   - Fill in the appointment form in the Contact section
+   - Submit to send email to oratilemaroke@gmail.com
+   - Form includes name, email, phone, service selection, and message fields
 
 ## Customization Guide
 
 ### Colors
-Edit the CSS variables in `styles.css` (lines 8-15):
+Edit the CSS variables in `styles.css` (lines 8-20):
 ```css
 :root {
-    --primary-color: #00d4ff;      /* Cyan accent */
-    --secondary-color: #0066cc;    /* Blue */
-    --accent-color: #ff6b35;       /* Orange highlight */
-    --dark-bg: #0a0e27;            /* Dark background */
+    --primary-blue: #0066cc;       /* Main brand color */
+    --dark-blue: #003d7a;          /* Hover states */
+    --light-blue: #e6f0ff;         /* Backgrounds */
+    --accent-color: #00a3e0;       /* Secondary highlights */
+    --grey: #f5f5f5;               /* Light backgrounds */
     /* ... more colors ... */
-}
-```
-
-### Background Image
-The tech background uses:
-- SVG grid pattern (customizable in `.hero-background` CSS)
-- Floating gradient orbs for visual interest
-- You can replace the SVG with your own image:
-
-```css
-.hero-background {
-    background-image: url('your-image.jpg');
-    background-size: cover;
-    background-attachment: fixed;
 }
 ```
 
 ### Content Updates
 Edit these sections in `index.html`:
-- **Navigation:** Change links in `.nav-menu`
-- **Hero section:** Update title, subtitle, and buttons
-- **Projects:** Add/modify projects in `.projects-grid`
-- **Contact:** Update email, phone, and social links
+- **Navigation Logo:** Change company name in `.nav-logo`
+- **Hero Section:** Update title, subtitle, and statistics
+- **About Section:** Update company description and mission
+- **Services:** Add/modify services in `.services-grid`
+- **Testimonials:** Add/update client testimonials
+- **Contact:** Update email, phone, address, and form fields
 
-### Add New Projects
-Add a new project card:
-```html
-<div class="project-card">
-    <div class="project-image">
+### Contact Information
+Update in `index.html`:
+- Email: oratilemaroke@gmail.com
+- Phone: +27 79 309 4179
+- Address: 6375 Tabane Street, Zone 5 Ga-Rankuwa Pretoria Noord
+
+## Technologies Used
+
+- HTML5
+- CSS3 (with CSS variables and animations)
+- JavaScript (vanilla)
+- Google Fonts (Poppins, Inter)
+- Font Awesome 6.4.0 (icons)
+
+## Browser Compatibility
+
+- Chrome/Edge (latest)
+- Firefox (latest)
+- Safari (latest)
+- Mobile browsers (iOS Safari, Chrome Mobile)
+
+## License
+
+This website is a professional services site for Moroken Prosthetist & Orthotist.
         <i class="fas fa-icon-name"></i>
     </div>
     <div class="project-content">
