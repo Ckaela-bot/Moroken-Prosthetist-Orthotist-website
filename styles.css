@@ -28,7 +28,7 @@ body {
     font-family: 'Inter', sans-serif;
     color: var(--text-primary);
     overflow-x: hidden;
-    background-color: #ffffff;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/owner-background.jpg.jpg') fixed center/cover no-repeat;
     min-height: 100vh;
     letter-spacing: 0.3px;
 }
@@ -454,7 +454,7 @@ section {
 
 /* About Section */
 .about {
-    background: var(--light-grey-bg);
+    background: rgba(248, 249, 250, 0.95);
 }
 
 .about-content {
@@ -614,7 +614,7 @@ section {
 
 /* Services Section */
 .services {
-    background: var(--grey);
+    background: rgba(245, 245, 245, 0.95);
 }
 
 .services-grid {
@@ -781,7 +781,7 @@ section {
 
 /* Contact Section */
 .contact {
-    background: white;
+    background: rgba(255, 255, 255, 0.95);
 }
 
 .contact-intro {
