@@ -28,9 +28,12 @@ body {
     font-family: 'Inter', sans-serif;
     color: var(--text-primary);
     overflow-x: hidden;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/owner-background.jpg.jpg') fixed center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('assets/owner-background.jpg.jpg') fixed center/cover no-repeat;
+    background-attachment: fixed;
+    background-position: center;
     min-height: 100vh;
     letter-spacing: 0.3px;
+    position: relative;
 }
 
 .navbar {
@@ -197,9 +200,11 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/owner-background.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('assets/owner-background.jpg.jpg') center/cover no-repeat;
     background-attachment: fixed;
+    background-position: center;
     z-index: 1;
+    transform: translateZ(0);
 }
 
 .hero::before {
@@ -439,7 +444,8 @@ section {
     font-size: 3.2rem;
     font-weight: 800;
     margin-bottom: 1.5rem;
-    color: var(--primary-blue);
+    color: white;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     letter-spacing: -0.5px;
 }
 
@@ -454,7 +460,9 @@ section {
 
 /* About Section */
 .about {
-    background: rgba(248, 249, 250, 0.95);
+    background: transparent;
+    position: relative;
+    background-attachment: fixed;
 }
 
 .about-content {
@@ -462,13 +470,30 @@ section {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: start;
+    perspective: 1000px;
+}
+
+.about-text {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .about-text p {
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.9);
     line-height: 1.8;
     margin-bottom: 1.5rem;
     font-size: 1.05rem;
+}
+
+.about-text h3 {
+    font-size: 1.3rem;
+    margin: 2rem 0 1rem 0;
+    color: white;
+    font-weight: 700;
 }
 
 .owner-section {
@@ -487,28 +512,30 @@ section {
     height: 200px;
     border-radius: 15px;
     object-fit: cover;
-    box-shadow: 0 8px 25px rgba(0, 102, 204, 0.2);
-    border: 3px solid var(--primary-blue);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
 }
 
 .owner-info h3 {
     font-size: 1.3rem;
     margin-bottom: 1rem;
-    color: var(--primary-blue);
+    color: white;
     font-weight: 700;
 }
 
 .owner-info p {
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.9);
     line-height: 1.8;
     font-size: 1.05rem;
 }
 
 .highlight-text {
     font-size: 1.3rem;
-    color: var(--primary-blue);
+    color: white;
     font-weight: 600;
     margin-bottom: 2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .skills-section {
@@ -518,7 +545,7 @@ section {
 .skills-section h3 {
     font-size: 1.3rem;
     margin-bottom: 1.5rem;
-    color: var(--text-primary);
+    color: white;
     font-weight: 700;
 }
 
@@ -529,9 +556,10 @@ section {
 }
 
 .skill-badge {
-    background: linear-gradient(135deg, var(--light-blue), #cce5ff);
-    border: 2px solid var(--primary-blue);
-    color: var(--primary-blue);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
     padding: 0.9rem 1.8rem;
     border-radius: 30px;
     text-align: center;
@@ -543,7 +571,8 @@ section {
 }
 
 .skill-badge:hover {
-    background: linear-gradient(135deg, var(--primary-blue), #0052a3);
+    background: rgba(0, 102, 204, 0.3);
+    border-color: rgba(255, 255, 255, 0.3);
     color: white;
     transform: translateY(-4px);
     box-shadow: 0 8px 20px rgba(0, 102, 204, 0.3);
@@ -553,14 +582,16 @@ section {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    perspective: 1000px;
 }
 
 .highlight-box {
-    background: white;
-    border: 2px solid var(--border-color);
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 2.5rem;
-    border-radius: 14px;
-    box-shadow: var(--shadow-md);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
     position: relative;
     overflow: hidden;
@@ -584,15 +615,15 @@ section {
 }
 
 .highlight-box:hover {
-    background: linear-gradient(135deg, var(--light-blue), #f0f6ff);
-    border-color: var(--primary-blue);
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.3);
     transform: translateX(12px);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 12px 40px rgba(0, 102, 204, 0.25);
 }
 
 .highlight-box i {
     font-size: 2.5rem;
-    color: var(--primary-blue);
+    color: #00d4ff;
     margin-bottom: 1.2rem;
     display: block;
 }
@@ -600,12 +631,12 @@ section {
 .highlight-box h4 {
     font-size: 1.3rem;
     margin-bottom: 0.8rem;
-    color: var(--text-primary);
+    color: white;
     font-weight: 800;
 }
 
 .highlight-box p {
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.85);
     font-size: 0.95rem;
     margin: 0;
     line-height: 1.6;
@@ -614,23 +645,27 @@ section {
 
 /* Services Section */
 .services {
-    background: rgba(245, 245, 245, 0.95);
+    background: transparent;
+    position: relative;
+    background-attachment: fixed;
 }
 
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
+    perspective: 1000px;
 }
 
 .service-card {
-    background: white;
-    border: 2px solid var(--border-color);
-    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
     padding: 3rem 2.5rem;
     text-align: center;
     transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
 }
@@ -654,46 +689,49 @@ section {
 
 .service-card:hover {
     transform: translateY(-12px);
-    border-color: var(--primary-blue);
-    box-shadow: var(--shadow-lg);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 12px 40px rgba(0, 102, 204, 0.25);
+    background: rgba(255, 255, 255, 0.18);
 }
 
 .service-icon {
     width: 90px;
     height: 90px;
-    background: linear-gradient(135deg, var(--light-blue), #cce5ff);
+    background: rgba(0, 102, 204, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2.5rem;
-    color: var(--primary-blue);
+    color: white;
     margin: 0 auto 1.5rem;
     transition: all 0.3s ease;
 }
 
 .service-card:hover .service-icon {
-    background: linear-gradient(135deg, var(--primary-blue), #0052a3);
-    color: white;
+    background: rgba(0, 163, 224, 0.3);
+    color: #00d4ff;
     transform: scale(1.1) rotate(5deg);
 }
 
 .service-card h3 {
     font-size: 1.6rem;
     margin-bottom: 1rem;
-    color: var(--text-primary);
+    color: white;
     font-weight: 800;
 }
 
 .service-card p {
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.9);
     margin-bottom: 1.8rem;
     line-height: 1.8;
     font-size: 1rem;
 }
 
 .service-link {
-    color: var(--primary-blue);
+    color: white;
     text-decoration: none;
     font-weight: 700;
     transition: all 0.3s ease;
@@ -709,7 +747,7 @@ section {
 }
 
 .service-link:hover {
-    color: var(--dark-blue);
+    color: #00d4ff;
 }
 
 .service-link:hover::after {
@@ -718,8 +756,9 @@ section {
 
 /* Testimonials Section */
 .testimonials {
-    background: var(--primary-blue);
+    background: linear-gradient(rgba(0, 102, 204, 0.85), rgba(0, 102, 204, 0.85)), url('assets/owner-background.jpg.jpg') fixed center/cover no-repeat;
     color: white;
+    background-attachment: fixed;
 }
 
 .testimonials-grid {
@@ -781,12 +820,14 @@ section {
 
 /* Contact Section */
 .contact {
-    background: rgba(255, 255, 255, 0.95);
+    background: transparent;
+    position: relative;
+    background-attachment: fixed;
 }
 
 .contact-intro {
     text-align: center;
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.9);
     font-size: 1.1rem;
     margin-bottom: 3rem;
     max-width: 600px;
@@ -799,46 +840,48 @@ section {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
     margin-bottom: 4rem;
+    perspective: 1000px;
 }
 
 .contact-card {
-    background: linear-gradient(135deg, var(--light-blue), #cce5ff);
-    border: 2px solid var(--primary-blue);
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 2.5rem;
-    border-radius: 16px;
+    border-radius: 20px;
     text-align: center;
     transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .contact-card:hover {
     transform: translateY(-10px);
-    border-color: var(--dark-blue);
+    border-color: rgba(255, 255, 255, 0.3);
     box-shadow: 0 15px 40px rgba(0, 102, 204, 0.25);
-    background: linear-gradient(135deg, #d9e9ff, #b3d9ff);
+    background: rgba(255, 255, 255, 0.18);
 }
 
 .contact-icon {
     font-size: 3rem;
-    color: var(--primary-blue);
+    color: white;
     margin-bottom: 1.3rem;
     transition: all 0.3s ease;
 }
 
 .contact-card:hover .contact-icon {
     transform: scale(1.15) rotate(-5deg);
-    color: var(--dark-blue);
+    color: #00d4ff;
 }
 
 .contact-card h3 {
     font-size: 1.3rem;
     margin-bottom: 1rem;
-    color: var(--text-primary);
+    color: white;
     font-weight: 800;
 }
 
 .contact-card a {
-    color: var(--primary-blue);
+    color: white;
     text-decoration: none;
     font-weight: 700;
     transition: all 0.3s ease;
@@ -852,7 +895,7 @@ section {
 }
 
 .contact-card p {
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.9);
     font-weight: 500;
     line-height: 1.6;
 }
@@ -866,15 +909,17 @@ section {
     font-size: 1.5rem;
     text-align: center;
     margin-bottom: 2rem;
-    color: var(--primary-blue);
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .contact-form {
-    background: linear-gradient(135deg, var(--light-grey-bg), #ffffff);
-    border: 2px solid var(--border-color);
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 3rem;
-    border-radius: 16px;
-    box-shadow: var(--shadow-md);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .form-row {
@@ -891,10 +936,11 @@ section {
 .contact-form textarea {
     width: 100%;
     padding: 1.2rem;
-    background: white;
-    border: 2px solid var(--border-color);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 10px;
-    color: var(--text-primary);
+    color: white;
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
     transition: all 0.3s ease;
@@ -903,16 +949,17 @@ section {
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.7);
     font-weight: 500;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
-    border-color: var(--primary-blue);
-    box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.15);
-    background: #f0f6ff;
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
 }
 
 .contact-form button {
@@ -927,11 +974,13 @@ section {
 
 /* Footer */
 .footer {
-    background: linear-gradient(135deg, var(--dark-grey), #2a2a3e);
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
     color: white;
     padding: 4rem 0 1.5rem;
-    border-top: 4px solid var(--primary-blue);
-    box-shadow: 0 -4px 15px rgba(0, 102, 204, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+    background-attachment: fixed;
 }
 
 .footer-content {

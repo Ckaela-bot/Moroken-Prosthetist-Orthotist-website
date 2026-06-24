@@ -314,4 +314,47 @@ activeLinkStyle.textContent = `
 `;
 document.head.appendChild(activeLinkStyle);
 
-console.log('Portfolio site loaded successfully!');
+// ========== Enhanced Parallax Scrolling Effect ==========
+// Create a parallax effect that makes sections move at different speeds
+function initParallaxEffect() {
+    const parallaxSections = [
+        { selector: 'body', speed: 0.5 },
+        { selector: '.hero', speed: 0.6 },
+        { selector: '.about', speed: 0.4 },
+        { selector: '.services', speed: 0.45 },
+        { selector: '.contact', speed: 0.35 },
+        { selector: '.footer', speed: 0.3 }
+    ];
+
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+
+        parallaxSections.forEach(section => {
+            const element = document.querySelector(section.selector);
+            if (element && element !== document.body) {
+                const offset = scrollY * section.speed;
+                element.style.backgroundPosition = `center ${offset * -1}px`;
+            }
+        });
+    }, { passive: true });
+}
+
+// Initialize parallax on page load
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initParallaxEffect);
+} else {
+    initParallaxEffect();
+}
+
+// Add parallax performance optimization
+const parallaxStyle = document.createElement('style');
+parallaxStyle.textContent = `
+    html, body, section {
+        will-change: background-position;
+        backface-visibility: hidden;
+        perspective: 1000px;
+    }
+`;
+document.head.appendChild(parallaxStyle);
+
+console.log('Portfolio site loaded successfully with enhanced parallax effect!');
