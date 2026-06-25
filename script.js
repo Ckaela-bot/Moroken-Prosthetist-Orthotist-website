@@ -200,21 +200,23 @@ document.head.appendChild(fadeInStyle);
 
 // Counter animation for stats
 function animateCounter(element, target, duration = 2000) {
+    const hasPlus = /\+$/.test(element.dataset.originalText || '');
     let current = 0;
     const increment = target / (duration / 16);
     const timer = setInterval(() => {
         current += increment;
         if (current >= target) {
-            element.textContent = target;
+            element.textContent = target + (hasPlus ? '+' : '');
             clearInterval(timer);
         } else {
-            element.textContent = Math.floor(current);
+            element.textContent = Math.floor(current) + (hasPlus ? '+' : '');
         }
     }, 16);
 }
 
 // Initialize counters when in view
 const statItems = document.querySelectorAll('.stat-item h3');
+statItems.forEach(item => item.dataset.originalText = item.textContent);
 let countersStarted = false;
 
 const statsObserver = new IntersectionObserver(function(entries) {
