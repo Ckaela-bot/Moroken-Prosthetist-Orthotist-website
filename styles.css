@@ -124,6 +124,44 @@ body, button, input, textarea, select {
     font-size: 1.4rem;
 }
 
+/* Small logo used in navbar */
+.nav-logo-img {
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-left: 0.4rem;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.16);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: #ffffff;
+    padding: 4px;
+}
+
+.underline-heading {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 0.35rem;
+}
+
+.underline-heading::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 70%;
+    height: 3px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--accent-color));
+}
+
+.skills-section {
+    margin-bottom: 3.5rem;
+}
+
+.about-highlights {
+    margin-top: 4rem;
+}
+
 @keyframes heartbeat {
     0%, 100% { transform: scale(1); opacity: 1; }
     50% { transform: scale(1.2); opacity: 0.8; }
