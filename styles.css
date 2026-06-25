@@ -35,11 +35,15 @@ body {
     min-height: 100vh;
     letter-spacing: 0.3px;
     position: relative;
+    /* ensure fixed navbar doesn't overlap content */
+    padding-top: 72px;
 }
 
 .navbar {
     position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     width: 100%;
     background: white;
     border-bottom: 1px solid #e0e0e0;
@@ -47,6 +51,26 @@ body {
     padding: 1rem 0;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
+}
+
+/* Navbar state when page is scrolled */
+.navbar.scrolled {
+    background: linear-gradient(90deg, var(--primary-blue), var(--dark-blue));
+    border-bottom: none;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.navbar.scrolled .nav-link {
+    color: #ffffff !important;
+}
+
+.navbar.scrolled .nav-logo .logo-text {
+    -webkit-text-fill-color: #ffffff !important;
+    background: none !important;
+}
+
+.navbar.scrolled .logo-subtext {
+    color: rgba(255,255,255,0.95) !important;
 }
 
 .nav-logo {
@@ -195,7 +219,7 @@ body {
     justify-content: center;
     position: relative;
     overflow: hidden;
-    margin-top: 60px;
+    margin-top: 0; /* navbar padding on body handles spacing */
     /* Stronger dark overlay for hero to improve contrast */
     background: linear-gradient(rgba(0, 0, 0, 0.80), rgba(0, 0, 0, 0.80)), url('assets/owner-background.jpg.jpg') center/cover;
     background-attachment: scroll;

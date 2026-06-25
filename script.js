@@ -17,13 +17,14 @@ navLinks.forEach(link => {
     });
 });
 
-// Navbar background on scroll
+// Toggle navbar scrolled state for color changes
+const navbar = document.querySelector('.navbar');
 window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
+    if (!navbar) return;
     if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(5, 8, 18, 0.98)';
+        navbar.classList.add('scrolled');
     } else {
-        navbar.style.background = 'rgba(5, 8, 18, 0.95)';
+        navbar.classList.remove('scrolled');
     }
 });
 
